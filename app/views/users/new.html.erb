@@ -1,6 +1,6 @@
 <h1>New User Form</h1>
 
-<form accept-charset="UTF-8" action="/users" method="post">
+<%# <form accept-charset="UTF-8" action="/users" method="post">
   <label for="username">Username:</label>
   <input type="text" id="username" name="user[username]">
   <label for="email">Email:</label>
@@ -8,4 +8,14 @@
   <label for="pwd">Password:</label>
   <input type="password" id="password" name="user[password]">
   <button type="submit">Submit</button>
-</form>
+</form> %>
+
+
+<%= form_with(url: "/users", method: "get") do %>
+  <%= label_tag(:username, "Username:") %>
+  <%= text_field_tag(:username) %>
+  <%= label_tag(:email, "Email:") %>
+  <%= text_field_tag(:email) %>
+  <%= label_tag(:password, "Password:") %>
+  <%= text_field_tag(:password) %>
+<% end %>
